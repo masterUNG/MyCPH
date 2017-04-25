@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My CPH</string>
+    <string name="login">ลงชื่อผู้ใช้งาน</string>
 </resources>
