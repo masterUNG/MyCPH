@@ -30,4 +30,5 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.btnLogin);
     }
 
+
 }   // Main Class นี่คือ คลาสหลัก เว้ยเห้ย
