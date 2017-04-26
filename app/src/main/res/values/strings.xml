@@ -2,4 +2,6 @@
     <string name="app_name">My CPH</string>
     <string name="login">ลงชื่อผู้ใช้งาน</string>
     <string name="regis">สมัครสมาชิก</string>
+    <string name="user">User :</string>
+    <string name="password">Password :</string>
 </resources>
