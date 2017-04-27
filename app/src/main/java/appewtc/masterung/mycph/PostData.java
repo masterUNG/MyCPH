@@ -17,7 +17,9 @@ import com.squareup.okhttp.Response;
 public class PostData extends AsyncTask<String, Void, String>{
 
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserMaster.php";
+//    private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserMaster.php";
+private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserMaster.php";
+
 
     public PostData(Context context) {
         this.context = context;
