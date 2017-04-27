@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText userEditText, passwordEditText;
     private TextView textView;
     private Button button;
+    private String userString, passwordString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //For Button
         if (view == button) {
+
+            //Get Value From EditText
+            userString = userEditText.getText().toString().trim();
+            passwordString = passwordEditText.getText().toString().trim();
+
+            //Check Space
+            if (userString.equals("") || passwordString.equals("")) {
+                //Have Space
+                MyAlert myAlert = new MyAlert(MainActivity.this);
+                myAlert.myDialog("Have Space", "Please Fill All Every Blank");
+
+            } else {
+                //No Space
+            }
+
+
 
         }
 
