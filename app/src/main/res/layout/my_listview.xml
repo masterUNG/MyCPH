@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/padding"
+
     android:background="@color/colorPrimaryLight"
     android:orientation="vertical">
 
@@ -13,6 +15,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/txtName"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,17 +26,21 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txtDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="13/04/17 13:00:00"
         android:textSize="@dimen/h2"
+        android:layout_marginRight="@dimen/padding"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/txtDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="detail ..."
+        android:layout_marginLeft="@dimen/padding"
         android:textSize="@dimen/h2"
         android:textStyle="bold" />
 
