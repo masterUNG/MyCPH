@@ -11,6 +11,7 @@ public class ServiceActivity extends AppCompatActivity {
     private TextView textView;
     private ImageView imageView;
     private ListView listView;
+    private String[] loginStrings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,15 @@ public class ServiceActivity extends AppCompatActivity {
 
         initialView();
 
+        //Get Value From Intent
+        getValueFromIntent();
+
     }   // Main Method
+
+    private void getValueFromIntent() {
+        loginStrings = getIntent().getStringArrayExtra("Login");
+        textView.setText(loginStrings[1]);
+    }
 
     private void initialView() {
         textView = (TextView) findViewById(R.id.txtName);
