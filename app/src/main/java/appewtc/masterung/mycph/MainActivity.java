@@ -3,6 +3,7 @@ package appewtc.masterung.mycph;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,12 +68,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             } else {
                 //No Space
+                checkUserAnPass();
             }
 
 
 
         }
 
+    }
+
+    private void checkUserAnPass() {
+        try {
+
+        } catch (Exception e) {
+            Log.d("27AprilV1", "e checkUser ==> " + e.toString());
+        }
     }
 
 }   // Main Class นี่คือ คลาสหลัก เว้ยเห้ย
