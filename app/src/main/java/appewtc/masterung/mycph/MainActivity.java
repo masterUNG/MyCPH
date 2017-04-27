@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Explicit
@@ -81,10 +84,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
 
             String urlJSON = "http://swiftcodingthai.com/cph/getDataMaster.php";
+            boolean b = true;
+            String[] columnStrings = new String[]{"id", "Name", "User", "Password"};
+            String[] loginStrings = new String[columnStrings.length];
+
             GetData getData = new GetData(MainActivity.this);
             getData.execute(urlJSON);
             String strJSON = getData.get();
             Log.d("27AprilV1", "JSON ==> " + strJSON);
+
+            JSONArray jsonArray = new JSONArray(strJSON);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (userString.equals(jsonObject.getString(columnStrings[2]))) {
+                    b = false;
+                    for (int i1=0;i1<columnStrings.length;i1++) {
+                        loginStrings[i1] = jsonObject.getString(columnStrings[i1]);
+                        Log.d("27AprilV1", "loginString(" + i1 + ") ==> " + loginStrings[i1]);
+                    }
+
+                }
+            }
 
 
         } catch (Exception e) {
