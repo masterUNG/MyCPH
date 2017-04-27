@@ -80,6 +80,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void checkUserAnPass() {
         try {
 
+            String urlJSON = "http://swiftcodingthai.com/cph/getDataMaster.php";
+            GetData getData = new GetData(MainActivity.this);
+            getData.execute(urlJSON);
+            String strJSON = getData.get();
+            Log.d("27AprilV1", "JSON ==> " + strJSON);
+
+
         } catch (Exception e) {
             Log.d("27AprilV1", "e checkUser ==> " + e.toString());
         }
