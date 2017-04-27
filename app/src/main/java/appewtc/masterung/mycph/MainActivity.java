@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -105,6 +106,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
 
                 }
+            }
+
+
+            if (b) {
+                // User False
+                MyAlert myAlert = new MyAlert(MainActivity.this);
+                myAlert.myDialog("User False", "No This User in my Database");
+
+            } else if (passwordString.equals(loginStrings[3])) {
+                Toast.makeText(MainActivity.this, "Welcome " + loginStrings[1],
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                MyAlert myAlert = new MyAlert(MainActivity.this);
+                myAlert.myDialog("Password False", "Please Try Again Password False");
             }
 
 
