@@ -1,5 +1,6 @@
 package appewtc.masterung.mycph;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -69,6 +70,10 @@ public class ServiceActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                     Log.d(tag, "You Click ==> " + qrCodeStrings[i]);
+
+                    Intent intent = new Intent(ServiceActivity.this, DetailActivity.class);
+                    intent.putExtra("QRcode", qrCodeStrings[i]);
+                    startActivity(intent);
 
                 }
             });

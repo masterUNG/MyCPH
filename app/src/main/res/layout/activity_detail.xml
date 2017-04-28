@@ -13,11 +13,13 @@
         android:padding="@dimen/padding">
 
         <ImageView
+            android:id="@+id/imvBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_back" />
 
         <TextView
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -39,6 +41,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/txtDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
@@ -58,6 +61,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/txtDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
@@ -77,6 +81,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/txtReceiveName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
