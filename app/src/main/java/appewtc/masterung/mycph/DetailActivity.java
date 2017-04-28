@@ -61,10 +61,27 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             nameTextView.setText(resultStrings[1]);
             dateTextView.setText(resultStrings[5]);
             detailTextView.setText(resultStrings[4]);
+            receiveNameTextView.setText(findNameReceive(resultStrings[3]));
+
 
         } catch (Exception e) {
             Log.d(tag, "e showView ==> " + e.toString());
         }
+    }
+
+    private String findNameReceive(String idReceive) {
+
+        String tag2 = "28AprilV2";
+
+        try {
+
+            GetProductWhereQR getProductWhereQR = new GetProductWhereQR(DetailActivity.this);
+            getProductWhereQR.execute();
+
+        } catch (Exception e) {
+            Log.d(tag2, "e findName ==> " + e.toString());
+        }
+        return null;
     }
 
     private void getValueFromIntent() {
