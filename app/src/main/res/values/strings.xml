@@ -5,4 +5,5 @@
     <string name="user">User :</string>
     <string name="password">Password :</string>
     <string name="name">Name :</string>
+    <string name="name_receive">ผู้บันทึก</string>
 </resources>
