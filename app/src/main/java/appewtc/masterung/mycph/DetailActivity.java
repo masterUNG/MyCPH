@@ -72,16 +72,25 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     private String findNameReceive(String idReceive) {
 
         String tag2 = "28AprilV2";
+        MyConstant myConstant = new MyConstant();
 
         try {
 
             GetProductWhereQR getProductWhereQR = new GetProductWhereQR(DetailActivity.this);
-            getProductWhereQR.execute();
+            getProductWhereQR.execute("id", idReceive, myConstant.getUrlGetUserWhereID());
+            String strJSON = getProductWhereQR.get();
+            Log.d(tag2, "JSON ==> " + strJSON);
+
+            JSONArray jsonArray = new JSONArray(strJSON);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+            return jsonObject.getString("Name");
 
         } catch (Exception e) {
             Log.d(tag2, "e findName ==> " + e.toString());
+            return null;
         }
-        return null;
+
     }
 
     private void getValueFromIntent() {
