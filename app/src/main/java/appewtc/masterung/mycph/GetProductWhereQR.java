@@ -17,7 +17,6 @@ import com.squareup.okhttp.Response;
 public class GetProductWhereQR extends AsyncTask<String, Void, String>{
 
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/cph/getProductWhereQRmaster.php";
 
     public GetProductWhereQR(Context context) {
         this.context = context;
@@ -32,10 +31,10 @@ public class GetProductWhereQR extends AsyncTask<String, Void, String>{
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = new FormEncodingBuilder()
                     .add("isAdd", "true")
-                    .add("QR_code", strings[0])
+                    .add(strings[0], strings[1])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(urlPHP).post(requestBody).build();
+            Request request = builder.url(strings[2]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 

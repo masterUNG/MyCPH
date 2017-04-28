@@ -30,65 +30,78 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
-        android:text="Date"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/h2"
-        android:textStyle="bold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:text="2012/21/21 10:12:22"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/h2"
-        android:textStyle="italic" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
-        android:text="Detail"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/h2"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:text="Date"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:text="detail"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/h2"
-        android:textStyle="italic" />
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:text="2012/21/21 10:12:22"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/h2"
+                android:textStyle="italic" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
-        android:text="@string/name_receive"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/h2"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:text="Detail"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtReceiveName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin"
-        android:text="@string/name"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/h2"
-        android:textStyle="italic" />
+            <TextView
+                android:id="@+id/txtDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:text="detail"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/h2"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:text="@string/name_receive"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtReceiveName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/h2"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>

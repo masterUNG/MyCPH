@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView imageView;
@@ -27,8 +30,42 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         //Get Value From Intent
         getValueFromIntent();
 
+        //Show View
+        showView();
+
 
     }   // Main Method
+
+    private void showView() {
+
+        MyConstant myConstant = new MyConstant();
+        String[] columnProduct = myConstant.getColumnProduct();
+        String urlPHP = myConstant.getUrlGetProductWhereQR();
+
+        try {
+
+            GetProductWhereQR getProductWhereQR = new GetProductWhereQR(DetailActivity.this);
+            getProductWhereQR.execute(columnProduct[2], qrCodeString, urlPHP);
+
+            String strJSON = getProductWhereQR.get();
+            Log.d(tag, "JSON ==> " + strJSON);
+
+            JSONArray jsonArray = new JSONArray(strJSON);
+            String[] resultStrings = new String[columnProduct.length];
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            for (int i=0;i<resultStrings.length;i++) {
+                resultStrings[i] = jsonObject.getString(columnProduct[i]);
+                Log.d(tag, "result(" + i + ") ==> " + resultStrings[i]);
+            }
+
+            nameTextView.setText(resultStrings[1]);
+            dateTextView.setText(resultStrings[5]);
+            detailTextView.setText(resultStrings[4]);
+
+        } catch (Exception e) {
+            Log.d(tag, "e showView ==> " + e.toString());
+        }
+    }
 
     private void getValueFromIntent() {
         qrCodeString = getIntent().getStringExtra("QRcode");
